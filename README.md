@@ -1,6 +1,9 @@
 # QRCodeV2
 A new generation of QR Codes transfer more data in smaller image
 
+> [!WARNING]
+> The code with version target 1.0 is not optimalized. Please don't put large data into the program, becouse taht can lead to disk issues and os crashes. THE CODE WILL CHANGE
+
 ## Known Issues
 
 - Custom objects in QR code to determine what is the data saved is not working (eg. link, code, or just text)
