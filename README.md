@@ -24,8 +24,11 @@ A new generation of QR Codes capable of transferring more data in a smaller imag
 ## 🛠️ How to Use
 1. Run `main.py` and follow the prompts.
    - Choose the `encode` option.
-   - Enter your string (e.g., `test`) and press Enter.
-   - The QR code will be saved as `custom_qr_code.png` in the same directory as `main.py`.
+     - Enter your string (e.g., `test`) and press Enter.
+     - The QR code will be saved as `custom_qr_code.png` in the same directory as `main.py`.
+   - Chose the `decode` option to read the QR code
+     - After that enter the path of the QR code image and press Enter.
+     - The decoded string will be displayed on the console (Or if custom, predefined data it will execute an operation eg. open a link).
 2. **Note**: Currently, only English letters, numbers, and specific special characters are supported.
 
 ---
