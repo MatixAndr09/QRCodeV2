@@ -1,28 +1,42 @@
 # QRCodeV2
-A new generation of QR Codes transfer more data in smaller image
+A new generation of QR Codes capable of transferring more data in a smaller image.
 
 > [!WARNING]
-> The code with tag named "Alpha" is very not optimalized. Please don't put large data into the program, becouse that can lead to disk issues and os crashes. THE CODE WILL CHANGE
+> **Alpha Version**: This code is highly unoptimized. Avoid inputting large data as it may cause disk issues or OS crashes. **Expect significant changes in future updates.**
 
-## Known Issues
+---
 
-- Custom objects in QR code to determine what is the data saved is not working (eg. link, code, or just text)
-- There is a lot of white spaces that are useless (I will fix this in the next version)
-- Image scaling don't always work
-- Image can be very big (for some reason)
+## 🚩 Known Issues
+- **Custom geometrical shapes and colors for data types**: 
+  The feature that uses geometrical shapes (e.g., square, triangle, circle) with specific colors to indicate data types (e.g., link, code, text) is not working correctly.
 
-## How to use
+- **Excessive white pixels**:  
+  Many pixels that should be filled are incorrectly left white, leading to inefficient QR codes.
 
-- Run main.py and there will be encode/decode options. Type encode then type yours string for example `test` and then press enter and the QR code will generate. To see it search for file named `custom_qr_code.png` int the same directory as main.py
-- Currently input data can only be english letters and numbers with special characters
+- **Incorrect image scaling**:  
+  The automatic pixel size determination, which adjusts based on input data size, sometimes fails and produces excessively large images (e.g., 10,000 x 10,000 pixels for a 10-word input).
 
-## Contributing
+- **Large file sizes**:  
+  Rarely, the generated QR code files can become extremely large (e.g., 33GB), causing Windows to crash when attempting to save. This bug is rare but critical when it occurs.
 
-If there is any issue please create an issue on github i will try to fix it as soon as possible
+---
 
-### Current version
+## 🛠️ How to Use
+1. Run `main.py` and follow the prompts.
+   - Choose the `encode` option.
+   - Enter your string (e.g., `test`) and press Enter.
+   - The QR code will be saved as `custom_qr_code.png` in the same directory as `main.py`.
+2. **Note**: Currently, only English letters, numbers, and specific special characters are supported.
 
-- Code: 1.1 (Alpha)
-- Python: 3.12.2 (64-bit)
-- Release Date: 04.12.2024
-- Required packages: `numpy`, `pillow`
+---
+
+## 🤝 Contributing
+If you encounter any issues, please report them on GitHub. I’ll address them as soon as possible.
+
+---
+
+### 🏷️ Current Version
+- **Code**: 1.1 (Alpha)
+- **Python**: 3.12.2 (64-bit)
+- **Release Date**: 2024-12-04
+- **Required Packages**: `numpy`, `pillow`
