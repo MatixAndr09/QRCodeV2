@@ -5,6 +5,8 @@ A new generation of QR Codes transfer more data in smaller image
 
 - Custom objects in QR code to determine what is the data saved is not working (eg. link, code, or just text)
 - There is a lot of white spaces that are useless (I will fix this in the next version)
+- Image scaling don't always work
+- Image can be very big (for some reason)
 
 ## How to use
 
