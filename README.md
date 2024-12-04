@@ -2,7 +2,7 @@
 A new generation of QR Codes transfer more data in smaller image
 
 > [!WARNING]
-> The code with version target 1.0 is not optimalized. Please don't put large data into the program, becouse taht can lead to disk issues and os crashes. THE CODE WILL CHANGE
+> The code with version named 1.0 is not optimalized. Please don't put large data into the program, becouse that can lead to disk issues and os crashes. THE CODE WILL CHANGE
 
 ## Known Issues
 
