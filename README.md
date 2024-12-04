@@ -2,7 +2,7 @@
 A new generation of QR Codes transfer more data in smaller image
 
 > [!WARNING]
-> The code with version named 1.0 is not optimalized. Please don't put large data into the program, becouse that can lead to disk issues and os crashes. THE CODE WILL CHANGE
+> The code with tag named "Alpha" is very not optimalized. Please don't put large data into the program, becouse that can lead to disk issues and os crashes. THE CODE WILL CHANGE
 
 ## Known Issues
 
@@ -13,7 +13,7 @@ A new generation of QR Codes transfer more data in smaller image
 
 ## How to use
 
-Run main.py and there will be encode/decode options. Type encode then type yours string for example `test` and then press enter and the QR code will generate. To see it search for file named `custom_qr_code.png` int the same directory as main.py
+- Run main.py and there will be encode/decode options. Type encode then type yours string for example `test` and then press enter and the QR code will generate. To see it search for file named `custom_qr_code.png` int the same directory as main.py
 - Currently input data can only be english letters and numbers with special characters
 
 ## Contributing
@@ -22,7 +22,7 @@ If there is any issue please create an issue on github i will try to fix it as s
 
 ### Current version
 
-- Code: 1.0 (Alpha)
+- Code: 1.1 (Alpha)
 - Python: 3.12.2 (64-bit)
 - Release Date: 04.12.2024
 - Required packages: `numpy`, `pillow`
