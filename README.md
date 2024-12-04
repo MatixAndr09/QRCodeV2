@@ -3,7 +3,7 @@ A new generation of QR Codes transfer more data in smaller image
 
 ## Known Issues
 
-- Custom objects in QR code to determine what is the data saved is not working
+- Custom objects in QR code to determine what is the data saved is not working (eg. link, code, or just text)
 - There is a lot of white spaces that are useless (I will fix this in the next version)
 
 ## How to use
