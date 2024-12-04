@@ -11,6 +11,9 @@ def encode_to_qr(text, size):
 
     for i, char in enumerate(text):
         color = char_to_color(char)
+        if color == (0, 0, 0) and char not in [' ', '\n']:  # Assuming black is the default for unsupported chars
+            print(f"Character '{char}' is not supported.")
+            exit(1)
         binary_char = format(ord(char), '08b')
         for j, bit in enumerate(binary_char):
             row = (i * 8 + j) // size

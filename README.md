@@ -14,6 +14,7 @@ A new generation of QR Codes transfer more data in smaller image
 ## How to use
 
 Run main.py and there will be encode/decode options. Type encode then type yours string for example `test` and then press enter and the QR code will generate. To see it search for file named `custom_qr_code.png` int the same directory as main.py
+- Currently input data can only be english letters and numbers with special characters
 
 ## Contributing
 
