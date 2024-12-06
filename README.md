@@ -45,7 +45,7 @@ If you encounter any issues, please report them on GitHub. I’ll address them a
 ---
 
 ### 🏷️ Current Version
-- **Code**: 1.1 (Alpha)
+- **Code**: 1.2 (Alpha)
 - **Python**: 3.12.2 (64-bit)
 - **Release Date**: 2024-12-04
 - **Required Packages**: `numpy`, `pillow`
