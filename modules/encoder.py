@@ -5,9 +5,9 @@ from modules.colorMapping import char_to_color
 def encode_to_qr(text, size):
     qr_matrix = np.zeros((size, size, 3), dtype=int)
 
-    if text.startswith("http://") or text.startswith("https://"):
-        # Add a green square in the top-right corner
-        qr_matrix[0, size-1] = [0, 255, 0]
+    if size > 16 and (text.startswith("http://") or text.startswith("https://")):
+        # Add a blue square with a 1-pixel gap from the border and from the 16x16 area
+        qr_matrix[1, size-2] = [0, 0, 255]
 
     for i, char in enumerate(text):
         color = char_to_color(char)

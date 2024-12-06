@@ -9,15 +9,21 @@ A new generation of QR Codes capable of transferring more data in a smaller imag
 ## 🚩 Known Issues
 - **Custom geometrical shapes and colors for data types**: 
   The feature that uses geometrical shapes (e.g., square, triangle, circle) with specific colors to indicate data types (e.g., link, code, text) is not working correctly.
+  - [ ] Links
+  - [ ] Code
+  - [ ] Text
 
-- **Excessive white pixels**:  
-  Many pixels that should be filled are incorrectly left white, leading to inefficient QR codes.
+- **After decode, spaces are not displayed correctly**:  
+  The spaces in the decoded string are not displayed correctly, making it difficult to read the output.
 
-- **Incorrect image scaling**:  
-  The automatic pixel size determination, which adjusts based on input data size, sometimes fails and produces excessively large images (e.g., 10,000 x 10,000 pixels for a 10-word input).
+~~- **Excessive white pixels**:~~  
+  ~~Many pixels that should be filled are incorrectly left white, leading to inefficient QR codes.~~
 
-- **Large file sizes**:  
-  Rarely, the generated QR code files can become extremely large (e.g., 33GB), causing Windows to crash when attempting to save. This bug is rare but critical when it occurs.
+~~- **Incorrect image scaling**:~~  
+  ~~The automatic pixel size determination, which adjusts based on input data size, sometimes fails and produces excessively large images (e.g., 10,000 x 10,000 pixels for a 10-word input).~~
+
+~~- **Large file sizes**:  ~~
+  ~~Rarely, the generated QR code files can become extremely large (e.g., 33GB), causing Windows to crash when attempting to save. This bug is rare but critical when it occurs.~~
 
 ---
 

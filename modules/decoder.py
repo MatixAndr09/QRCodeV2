@@ -9,7 +9,7 @@ def generate_qr_image(qr_matrix, back_color=(255, 255, 255)):
 
     for row in range(size):
         for col in range(size):
-            if not np.array_equal(qr_matrix[row, col], [0, 0, 0]):
+            if not np.array_equal(qr_matrix[row, col], back_color):
                 for i in range(scale):
                     for j in range(scale):
                         image.putpixel((col * scale + j, row * scale + i), tuple(qr_matrix[row, col]))
