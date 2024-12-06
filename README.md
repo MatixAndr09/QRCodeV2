@@ -22,7 +22,7 @@ A new generation of QR Codes capable of transferring more data in a smaller imag
 ~~- **Incorrect image scaling**:~~  
   ~~The automatic pixel size determination, which adjusts based on input data size, sometimes fails and produces excessively large images (e.g., 10,000 x 10,000 pixels for a 10-word input).~~
 
-~~- **Large file sizes**:  ~~
+~~- **Large file sizes**:~~
   ~~Rarely, the generated QR code files can become extremely large (e.g., 33GB), causing Windows to crash when attempting to save. This bug is rare but critical when it occurs.~~
 
 ---
