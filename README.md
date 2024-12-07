@@ -36,7 +36,7 @@ If you encounter any issues, please report them on GitHub. I’ll address them a
 ---
 
 ### 🏷️ Current Version
-- **Code**: 1.4 (Alpha)
+- **Code**: 1.5 (Alpha)
 - **Python**: 3.12.2, 3.12.6 (64-bit)
 - **Release Date**: 2024-12-04
-- **Required Packages**: `numpy`, `pillow`, `psutil`
+- **Required Packages**: `numpy`, `pillow`, `psutil`, `pathlib`, `re`

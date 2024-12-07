@@ -1,10 +1,8 @@
-from pathlib import Path
 import imghdr
 import os
 
 from modules.decoder import generate_qr_image, decode_qr_image, qr_matrix_to_text
 from modules.sizeDetect import calculate_qr_size
-from modules.textToBinary import text_to_binary
 from modules.encoder import encode_to_qr
 
 MAX_TEXT_LENGTH = 1000

@@ -1,0 +1,5 @@
+numpy
+pillow
+psutil
+pathlib
+re
