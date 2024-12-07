@@ -1,14 +1,7 @@
-from datetime import datetime
+# modules/logger.py
 import logging
+from datetime import datetime
 import os
-
-
-def log_security_event(event_type: str, details: str):
-    logging.info(f"Security Event - {event_type}: {details}")
-
-
-def log_error(error_type: str, details: str):
-    logging.error(f"Error - {error_type}: {details}")
 
 
 class SecurityLogger:
@@ -23,3 +16,9 @@ class SecurityLogger:
             level=logging.INFO,
             format='%(asctime)s - %(levelname)s - %(message)s'
         )
+
+    def log_security_event(self, event_type: str, details: str):
+        logging.info(f"Security Event - {event_type}: {details}")
+
+    def log_error(self, error_type: str, details: str):
+        logging.error(f"Error - {error_type}: {details}")

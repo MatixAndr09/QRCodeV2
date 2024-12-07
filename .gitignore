@@ -1,5 +1,12 @@
-/target
+# Pycharm IDE dirs
+
 .idea/
-Cargo.lock
-*.png
+
+# Python Compiled
+
 __pycache__/
+
+# Program generated dirs
+
+logs/
+output/
