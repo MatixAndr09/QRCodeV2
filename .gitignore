@@ -5,6 +5,9 @@
 # Python Compiled
 
 __pycache__/
+*.spec
+build/
+dist/
 
 # Program generated dirs
 
