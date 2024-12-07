@@ -39,4 +39,4 @@ If you encounter any issues, please report them on GitHub. I’ll address them a
 - **Code**: 1.5 (Alpha)
 - **Python**: 3.12.2, 3.12.6 (64-bit)
 - **Release Date**: 2024-12-04
-- **Required Packages**: `numpy`, `pillow`, `psutil`, `pathlib`, `re`
+- **Required Packages**: in `requirements`
