@@ -1,8 +1,9 @@
 # QRCodeV2
 A new generation of QR Codes capable of transferring more data in a smaller image.
 
-> [!WARNING]
-> **Alpha Version**: This code is highly unoptimized. Avoid inputting large data as it may cause disk issues or OS crashes. **Expect significant changes in future updates.**
+[//]: # (> [!WARNING])
+
+[//]: # (> **Alpha Version**: This code is highly unoptimized. Avoid inputting large data as it may cause disk issues or OS crashes. **Expect significant changes in future updates.**)
 
 ---
 
@@ -16,12 +17,17 @@ A new generation of QR Codes capable of transferring more data in a smaller imag
 - **After decode, spaces are not displayed correctly**:  
   The spaces in the decoded string are not displayed correctly, making it difficult to read the output.
 
+[//]: # (---)
+
+[//]: # ()
+[//]: # (## Future Updates)
+
+[//]: # ()
+[//]: # (~~- **Remove imghdr dependency**:  )
+
+[//]: # (  The `imghdr` will be removed in Python 3.13 so it will be replaced with a custom function made by me.~~)
+
 ---
-
-## Future Updates
-
-- **Remove imghdr dependency**:  
-  The `imghdr` will be removed in Python 3.13 so it will be replaced with a custom function made by me.
 
 ## 🛠️ How to Use
 1. Run `main.py` and follow the prompts.
@@ -43,7 +49,7 @@ If you encounter any issues, please report them on GitHub. I’ll address them a
 ---
 
 ### 🏷️ Current Version
-- **Code**: 1.8 (Alpha)
+- **Code**:  0.1.0 Pre-Release
 - **Python**: 3.12.2, 3.12.6 (64-bit)
-- **Release Date**: 2024-12-04
+- **Last Update Date**: 07.12.2024
 - **Required Packages**: in `requirements`
