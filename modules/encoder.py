@@ -1,3 +1,4 @@
+from modules.shape_indicator import detect_data_type, add_indicator
 from concurrent.futures import ThreadPoolExecutor
 from modules.colorMapping import char_to_color
 import numpy as np
@@ -35,7 +36,8 @@ def encode_to_qr(text: str, size: int) -> np.ndarray:
             mask = chunk_matrix.any(axis=2)
             qr_matrix[mask] = chunk_matrix[mask]
 
-    if size > 16 and (text.startswith("http://") or text.startswith("https://")):
-        qr_matrix[1, size - 2] = [0, 0, 255]
+    # Add data type indicator
+    data_type = detect_data_type(text)
+    add_indicator(qr_matrix, data_type)
 
     return qr_matrix
