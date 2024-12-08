@@ -49,7 +49,7 @@ If you encounter any issues, please report them on GitHub. I’ll address them a
 ---
 
 ### 🏷️ Current Version
-- **Code**:  0.1.0 Pre-Release
+- **Version**:  0.1.1 Pre-Release
 - **Python**: 3.12.2, 3.12.6 (64-bit)
 - **Last Update Date**: 07.12.2024
 - **Required Packages**: in `requirements`
