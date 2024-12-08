@@ -4,9 +4,9 @@ import numpy as np
 
 
 class DataType(Enum):
-    LINK = ((255, 0, 0), "triangle")
-    CODE = ((0, 255, 0), "square")
-    TEXT = ((0, 0, 255), "circle")
+    LINK = ((255, 0, 0), "triangle")  # Red triangle for links
+    CODE = ((0, 255, 0), "square")  # Green square for code
+    TEXT = ((0, 0, 255), "circle")  # Blue circle for text
 
 
 def detect_data_type(text: str) -> DataType:
@@ -17,26 +17,72 @@ def detect_data_type(text: str) -> DataType:
     return DataType.TEXT
 
 
-def draw_shape(matrix: np.ndarray, shape: str, color: Tuple[int, int, int], pos: Tuple[int, int], size: int = 3):
+def draw_triangle_outline(matrix: np.ndarray, color: Tuple[int, int, int], pos: Tuple[int, int], size: int):
     x, y = pos
-    if shape == "square":
-        matrix[x:x + size, y:y + size] = color
-    elif shape == "triangle":
-        for i in range(size):
-            matrix[x + i, y + i:y + size - i] = color
+    height = size
+    base = size * 2  # Make the base twice as wide as the height
+
+    # Draw the outline of an upward-pointing triangle
+    for i in range(height):
+        # Calculate the width at this height (reverse the calculation for upward triangle)
+        width = (base * i // height)
+        start = y + (base - width) // 2
+
+        # Draw left and right edges
+        if start < matrix.shape[1]:
+            matrix[x + (height - i - 1), start] = color  # Left edge
+        if start + width - 1 < matrix.shape[1]:
+            matrix[x + (height - i - 1), start + width - 1] = color  # Right edge
+
+        # Draw top edge if we're at the top
+        if i == height - 1:
+            for j in range(width):
+                if start + j < matrix.shape[1]:
+                    matrix[x, start + j] = color
+
+
+def get_reserved_area(matrix_size: int, shape: str, size: int) -> Tuple[slice, slice]:
+    """Get the area that should be reserved for the shape indicator."""
+    padding = 5
+    if shape == "triangle":
+        x_start = padding
+        x_end = padding + size
+        y_start = padding
+        y_end = padding + (size * 2)  # Double width for triangle
+        return slice(x_start, x_end), slice(y_start, y_end)
+    return slice(0, 0), slice(0, 0)
+
+
+def draw_shape(matrix: np.ndarray, shape: str, color: Tuple[int, int, int], pos: Tuple[int, int], size: int = 40):
+    x, y = pos
+    if shape == "triangle":
+        draw_triangle_outline(matrix, color, pos, size)
+    elif shape == "square":
+        # Draw square outline
+        matrix[x:x + size, y] = color  # Left edge
+        matrix[x:x + size, y + size - 1] = color  # Right edge
+        matrix[x, y:y + size] = color  # Top edge
+        matrix[x + size - 1, y:y + size] = color  # Bottom edge
     elif shape == "circle":
         center = size // 2
         for i in range(size):
             for j in range(size):
-                if (i - center) ** 2 + (j - center) ** 2 <= (size // 2) ** 2:
+                dist = np.sqrt((i - center) ** 2 + (j - center) ** 2)
+                if abs(dist - center) < 1:
                     matrix[x + i, y + j] = color
 
 
-def add_indicator(qr_matrix: np.ndarray, data_type: DataType):
+def add_indicator(qr_matrix: np.ndarray, data_type: DataType) -> Tuple[slice, slice]:
     matrix_size = qr_matrix.shape[0]
     if matrix_size < 16:
-        return
+        return slice(0, 0), slice(0, 0)
 
     color, shape = data_type.value
-    pos = (1, matrix_size - 5)
-    draw_shape(qr_matrix, shape, color, pos)
+    size = min(40, matrix_size // 6)
+
+    # Position in top-left corner with padding
+    pos = (5, 5)
+    draw_shape(qr_matrix, shape, color, pos, size=size)
+
+    # Return the reserved area
+    return get_reserved_area(matrix_size, shape, size)

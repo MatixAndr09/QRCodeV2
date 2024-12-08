@@ -55,8 +55,20 @@ def get_color_array():
 
 
 def char_to_color(char: str) -> tuple:
-    color_array = get_color_array()
+    """Convert a character to a unique RGB color."""
+    # Use a simple hash function to generate consistent RGB values
     char_code = ord(char)
-    if 0 <= char_code < 128:
-        return tuple(color_array[char_code])
-    return (0, 0, 0)
+    r = (char_code * 7) % 256
+    g = (char_code * 11) % 256
+    b = (char_code * 13) % 256
+    return (r, g, b)
+
+
+def color_to_char(color: tuple) -> str:
+    """Convert an RGB color back to a character."""
+    # Find the character that would generate this color
+    for i in range(128):  # ASCII range
+        test_color = char_to_color(chr(i))
+        if test_color == tuple(color):
+            return chr(i)
+    return ''

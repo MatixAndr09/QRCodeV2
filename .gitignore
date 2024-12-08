@@ -13,3 +13,7 @@ dist/
 
 logs/
 output/
+
+# My Dev directories
+
+DEV/
